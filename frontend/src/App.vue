@@ -1,30 +1,32 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <h1>Página Inicial - Dashboard de Fazendas</h1>
+    <router-link to="/criar"><ButtonCreate /></router-link>
+    <h1>Lista de Fazendas</h1>
+    <HomeDash />
+  </div>
+  <router-view />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import ButtonCreate from "./components/ButtonCreate.vue";
+import HomeDash from "./components/HomeDash.vue";
 
-nav {
-  padding: 30px;
-}
+export default {
+  name: "app",
+  data() {
+    return {};
+  },
+  components: {
+    ButtonCreate,
+    HomeDash,
+  },
+};
+</script>
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+<style scoped>
+* {
+  margin-top: 2%;
+  margin-left: 2%;
 }
 </style>
