@@ -1,13 +1,17 @@
 <template>
   <div>
-    <h1>Criar Fazenda Aqui</h1>
+    <CriarForm />
   </div>
 </template>
 
 <script>
+import CriarForm from "@/components/CriarForm.vue";
+
 export default {
   name: "CriarView",
-  components: {},
+  components: {
+    CriarForm,
+  },
 };
 </script>
 
