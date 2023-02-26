@@ -1,60 +1,85 @@
 <template>
-  <h1>Criar Fazenda</h1>
-  <router-link to="/"
-    ><button type="button" class="btn btn-info">
-      Voltar para Home
-    </button></router-link
-  >
+  <div>
+    <h1>Criar Fazenda</h1>
+    <router-link to="/"
+      ><button type="button" class="btn btn-info">
+        Voltar para Home
+      </button></router-link
+    >
 
-  <form class="mx-1 mx-md-4">
-    <div class="d-flex flex-row align-items-center mb-2">
-      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-      <div class="form-outline flex-fill mb-0">
-        <input type="text" id="form3Example1c" class="form-control" />
-        <label class="form-label" for="form3Example1c">Nome da Fazenda</label>
+    <form id="burguer-form" @submit="createFarm">
+      <div class="input-container">
+        <label for="nome">Name: </label>
+        <input type="text" id="name" name="name" v-model="name" />
       </div>
-    </div>
-
-    <div class="d-flex flex-row align-items-center mb-2">
-      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-      <div class="form-outline flex-fill mb-0">
-        <input type="text" id="form3Example3c" class="form-control" />
-        <label class="form-label" for="form3Example3c">Área</label>
+      <div class="input-container">
+        <label for="nome">Geometry: </label>
+        <input type="text" id="geometry" name="geometry" v-model="geometry" />
       </div>
-    </div>
-
-    <div class="d-flex flex-row align-items-center mb-2">
-      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-      <div class="form-outline flex-fill mb-0">
-        <input type="text" id="form3Example4c" class="form-control" />
-        <label class="form-label" for="form3Example4c">Centro_ID</label>
+      <div class="input-container">
+        <label for="nome">Área: </label>
+        <input type="text" id="area" name="area" v-model="area" />
       </div>
-    </div>
-
-    <div class="d-flex flex-row align-items-center mb-2">
-      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-      <div class="form-outline flex-fill mb-0">
-        <input type="text" id="form3Example4cd" class="form-control" />
-        <label class="form-label" for="form3Example4cd">Geometria</label>
+      <div class="input-container">
+        <label for="nome">CentroID: </label>
+        <input type="text" id="centroid" name="centroid" v-model="centroid" />
       </div>
-    </div>
-
-    <div class="d-flex flex-row align-items-center mb-2">
-      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-      <div class="form-outline flex-fill mb-0">
-        <input type="text" id="form3Example4cd" class="form-control" />
-        <label class="form-label" for="form3Example4cd">ID Dono</label>
+      <div class="input-container">
+        <label for="nome">Owner_ID: </label>
+        <input type="text" id="owner_id" name="owner_id" v-model="owner_id" />
       </div>
-    </div>
-
-    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-      <button type="button" class="btn btn-primary btn-lg">Criar</button>
-    </div>
-  </form>
+      <div>
+        <input type="submit" class="submit-btn" value="Criar Fazenda" />
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
 export default {
   name: "CriarForm",
+  data() {
+    return {
+      name: null,
+      area: null,
+      centroid: null,
+      geometry: null,
+      owner_id: null,
+    };
+  },
+  methods: {
+    async createFarm(e) {
+      e.preventDefault();
+
+      console.log("Criou a fazenda!");
+
+      const farm = {
+        name: this.name,
+        area: this.area,
+        centroid: this.centroid,
+        geometry: this.geometry,
+        owner_id: this.owner_id,
+      };
+
+      // Enviar a requisição para a API
+      const farmJson = JSON.stringify(farm);
+      const response = await fetch("http://localhost:3000/farms", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: farmJson,
+      });
+
+      (this.name = ""),
+        (this.area = ""),
+        (this.centroid = ""),
+        (this.geometry = ""),
+        (this.owner_id = "");
+
+      const data = await response.json();
+      console.log(data);
+    },
+  },
 };
 </script>
