@@ -1,5 +1,8 @@
 <template>
   <div>
+    <h1>Página Inicial - Dashboard de Fazendas</h1>
+    <router-link to="/criar"><ButtonCreate /></router-link>
+    <h1>Lista de Fazendas</h1>
     <table class="table">
       <thead>
         <tr>
@@ -18,12 +21,17 @@
 </template>
 
 <script>
+import ButtonCreate from "@/components/ButtonCreate.vue";
+
 export default {
   name: "HomeDash",
   data() {
     return {
       farms: null,
     };
+  },
+  components: {
+    ButtonCreate,
   },
   methods: {
     async getFarms() {

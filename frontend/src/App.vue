@@ -1,32 +1,21 @@
 <template>
-  <div id="app">
-    <h1>Página Inicial - Dashboard de Fazendas</h1>
-    <router-link to="/criar"><ButtonCreate /></router-link>
-    <h1>Lista de Fazendas</h1>
-    <HomeDash />
-  </div>
+  <div id="app"></div>
   <router-view />
 </template>
 
 <script>
-import ButtonCreate from "./components/ButtonCreate.vue";
-import HomeDash from "./components/HomeDash.vue";
-
 export default {
   name: "app",
   data() {
     return {};
   },
-  components: {
-    ButtonCreate,
-    HomeDash,
-  },
+  components: {},
 };
 </script>
 
-<style scoped>
+<style>
 * {
-  margin-top: 2%;
-  margin-left: 2%;
+  margin-top: 1%;
+  margin-left: 1%;
 }
 </style>

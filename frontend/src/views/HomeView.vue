@@ -1,10 +1,16 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HomeDash />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import HomeDash from "@/components/HomeDash.vue";
+export default {
+  name: "HomeView",
+  components: {
+    HomeDash,
+  },
+};
 </script>
