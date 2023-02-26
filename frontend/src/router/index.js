@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import CriarView from "../views/CriarView.vue";
-
+import CriarForm from "../components/CriarForm.vue";
 const routes = [
   {
     path: "/",
@@ -15,7 +14,7 @@ const routes = [
     // this generates a separate chunk (criar.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "criar" */ "../views/CriarView.vue"),
+      import(/* webpackChunkName: "criar" */ "../components/CriarForm.vue"),
   },
 ];
 
