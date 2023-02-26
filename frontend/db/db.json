@@ -10,27 +10,19 @@
     },
     {
       "id": 2,
-      "name": "Fazenda São Pedro",
-      "geometry": 20,
-      "area": 30,
-      "centroid": 40,
+      "name": "Fazenda Ouro Preto",
+      "geometry": 10,
+      "area": 20,
+      "centroid": 30,
       "owner_id": 1
     },
     {
       "id": 3,
-      "name": "Fazenda São João 2",
-      "geometry": 30,
-      "area": 40,
-      "centroid": 50,
+      "name": "Fazenda Ouro Verde",
+      "geometry": 10,
+      "area": 20,
+      "centroid": 30,
       "owner_id": 1
-    },
-    {
-      "name": "Fazenda Brasil",
-      "area": "3000",
-      "centroid": "4",
-      "geometry": "10",
-      "owner_id": "1",
-      "id": 4
     }
   ],
   "owners": [

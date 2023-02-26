@@ -1,11 +1,20 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CriarForm from "../components/CriarForm.vue";
+
+import FarmDetails from "../components/FarmDetails.vue";
+
 const routes = [
   {
     path: "/",
     name: "home",
     component: HomeView,
+  },
+  {
+    path: "/:id",
+    name: "farm-details",
+    component: FarmDetails,
+    props: true,
   },
   {
     path: "/criar",
