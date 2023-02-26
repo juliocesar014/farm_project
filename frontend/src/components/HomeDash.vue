@@ -11,8 +11,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(farm, index) in farms" :key="index">
-          <th scope="row">{{ index }}</th>
+        <tr v-for="farm in farms" :key="farm.id">
+          <th scope="row">{{ farm.id }}</th>
           <td>{{ farm.name }}</td>
         </tr>
       </tbody>
@@ -38,7 +38,6 @@ export default {
       const response = await fetch("http://localhost:3000/farms");
       const data = await response.json();
       this.farms = data;
-      console.log(data);
     },
   },
   mounted() {
