@@ -13,7 +13,7 @@ Clone o projeto
 Entre no diretório do projeto
 
 ```bash
-  cd crawler_node
+  cd farm_project
 ```
 
 Entre no backend do projeto
