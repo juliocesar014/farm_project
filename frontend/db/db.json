@@ -1,14 +1,6 @@
 {
   "farms": [
     {
-      "id": 1,
-      "name": "Fazenda Ouro Branco",
-      "geometry": 10,
-      "area": 20,
-      "centroid": 30,
-      "owner_id": 1
-    },
-    {
       "id": 2,
       "name": "Fazenda Ouro Preto",
       "geometry": 10,
@@ -23,6 +15,14 @@
       "area": 20,
       "centroid": 30,
       "owner_id": 1
+    },
+    {
+      "name": "Fazenda Brasil",
+      "area": "1",
+      "centroid": "1",
+      "geometry": "1",
+      "owner_id": "1",
+      "id": 4
     }
   ],
   "owners": [
