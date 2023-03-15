@@ -22,10 +22,15 @@ Entre no backend do projeto
   cd backend
 ```
 
+Crie a sua imagem do container docker
+
 ```bash
   docker build -t nomedasuaimagem .
 ```
 
+Execute seu container utilizando a flag -p (representa a porta que irá executar o servidor)
+
 ```bash
   docker run -p 8000:8000 nomedasuaimagem
 ```
+
